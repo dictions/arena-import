@@ -7,7 +7,7 @@ const repl = require('repl');
 require('dotenv').config();
 
 const simultaneousRequestLimit = Number(process.env.ARENA_SIMULTANEOUS_REQUESTS);
-let currentBookmark = 1;
+let currentBookmark = 0;
 let isFinishedAddingBookmarks = false;
 
 // Give some feedback
@@ -23,8 +23,8 @@ everyLimit(pinboardExport, simultaneousRequestLimit, (bookmark, callback) => {
 				callback(err);
 			} else {
 				// Give some feedback
-				console.log(`[${currentBookmark}/${pinboardExport.length}] - ${bookmark.href}`);
 				currentBookmark++;
+				console.log(`[${currentBookmark}/${pinboardExport.length}] - ${bookmark.href}`);
 				callback(null, !err);
 			}
 		})
@@ -32,6 +32,6 @@ everyLimit(pinboardExport, simultaneousRequestLimit, (bookmark, callback) => {
 	if (err) {
 		console.log(err);
 	} else {
-		console.log(`Successfully added ${currentBookmark - 1} bookmarks.`);
+		console.log(`Successfully added ${currentBookmark} bookmarks.`);
 	}
 })
