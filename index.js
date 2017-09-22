@@ -1,14 +1,13 @@
 const request = require('superagent');
 const pinboardExport = require('./pinboard_export.json');
 const everyLimit = require('async/everyLimit');
-const repl = require('repl');
 
 // Set env variables
 require('dotenv').config();
-
 const simultaneousRequestLimit = Number(process.env.ARENA_SIMULTANEOUS_REQUESTS);
+
+// Count for later
 let currentBookmark = 0;
-let isFinishedAddingBookmarks = false;
 
 // Give some feedback
 console.log(`Adding ${pinboardExport.length} bookmarks...`);
