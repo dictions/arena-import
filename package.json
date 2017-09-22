@@ -1,0 +1,17 @@
+{
+  "name": "arena-import",
+  "version": "1.0.0",
+  "description": "Import are.na blocks from pinboard JSON export",
+  "main": "index.js",
+  "repository": "git@github.com:dictions/arena-import.git",
+  "author": "Ian Williams <me@ianwillia.ms>",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.5.0",
+    "dotenv": "^4.0.0",
+    "superagent": "^3.6.0"
+  },
+  "scripts": {
+    "start": "node index"
+  }
+}

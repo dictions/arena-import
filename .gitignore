@@ -1,0 +1,4 @@
+node_modules
+.env
+pinboard_export.json
+.yarn-cache
